@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Emergency - SafeCampusSOS</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: radial-gradient(circle at center, #3a0d0d 0%, #180707 45%, #080808 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .emergency-title {
+            position: absolute;
+            top: 55px;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .emergency-title h1 {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .emergency-title p {
+            font-size: 0.95rem;
+            color: #d7d7d7;
+            letter-spacing: 1px;
+        }
+
+        .sos-container {
+            position: relative;
+            width: 360px;
+            height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sos-container::before,
+        .sos-container::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            animation: ring 2.5s infinite;
+        }
+
+        .sos-container::before {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(255, 70, 70, 0.25);
+        }
+
+        .sos-container::after {
+            width: 250px;
+            height: 250px;
+            border: 1px solid rgba(255, 100, 100, 0.25);
+            animation-delay: 0.7s;
+        }
+
+        .sos-button {
+            position: relative;
+            z-index: 5;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            color: white;
+            background: radial-gradient(circle at 35% 30%, #ff5b5b, #e31b23 45%, #a90008 100%);
+            box-shadow: 0 0 0 12px rgba(255, 40, 40, 0.12),
+                        0 0 35px rgba(255, 30, 30, 0.7),
+                        inset 0 8px 20px rgba(255, 255, 255, 0.25),
+                        inset 0 -10px 25px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: sosBlink 1.2s infinite ease-in-out;
+        }
+
+        .sos-icon {
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+        }
+
+        .sos-text {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+        }
+
+        .sos-button:hover {
+            animation: none;
+            transform: scale(1.05);
+        }
+
+        .sos-button:active {
+            transform: scale(0.96);
+        }
+
+        @keyframes sosBlink {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes ring {
+            0% {
+                transform: scale(0.75);
+                opacity: 0.8;
+            }
+
+            70%, 100% {
+                transform: scale(1.15);
+                opacity: 0;
+            }
+        }
+
+        .info-box {
+            position: absolute;
+            bottom: 45px;
+            text-align: center;
+            padding: 15px 25px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e5e5e5;
+            font-size: 0.95rem;
+        }
+
+        .info-box strong {
+            color: #ff5555;
+        }
+
+        @media (max-width: 600px) {
+            .emergency-title {
+                top: 35px;
+            }
+
+            .emergency-title h1 {
+                font-size: 1.5rem;
+            }
+
+            .emergency-title p {
+                font-size: 0.8rem;
+            }
+
+            .sos-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .sos-button {
+                width: 180px;
+                height: 180px;
+            }
+
+            .sos-icon {
+                font-size: 2.8rem;
+            }
+
+            .sos-text {
+                font-size: 2.6rem;
+            }
+
+            .info-box {
+                bottom: 25px;
+                font-size: 0.8rem;
+                padding: 12px 18px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .emergency-title {
+                top: 25px;
+            }
+
+            .emergency-title h1 {
+                font-size: 1.25rem;
+            }
+
+            .emergency-title p {
+                font-size: 0.7rem;
+            }
+
+            .sos-container {
+                width: 270px;
+                height: 270px;
+            }
+
+            .sos-button {
+                width: 155px;
+                height: 155px;
+            }
+
+            .sos-icon {
+                font-size: 2.3rem;
+            }
+
+            .sos-text {
+                font-size: 2.2rem;
+            }
+
+            .info-box {
+                bottom: 18px;
+                font-size: 0.7rem;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="emergency-title">
+        <h1>🚨 EMERGENCY ASSISTANCE</h1>
+        <p>Use SOS only when immediate help is required</p>
+    </div>
+
+    <div class="sos-container">
+        <button type="button"
+                class="sos-button"
+                onclick="openEmergencyAssistance()"
+                aria-label="Open emergency assistance">
+            <div class="sos-icon">🚨</div>
+            <div class="sos-text">SOS</div>
+        </button>
+    </div>
+
+    <div class="info-box">
+        Click the <strong>SOS</strong> button to access emergency help
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/alerts.js"></script>
+
+    <script>
+        function openEmergencyAssistance() {
+            window.location.href = "selection.html";
+        }
+    </script>
+</body>
+</html>

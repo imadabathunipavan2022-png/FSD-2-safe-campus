@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lost Card Emergency</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* ================= BODY ================= */
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+
+            background: #f4f8ff;
+
+            color: #333;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #1565c0;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            font-size: 2rem;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 40px 20px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* ================= HEADINGS ================= */
+
+        h2 {
+            color: #0d47a1;
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-size: 1.7rem;
+        }
+
+
+        /* ================= WARNING ================= */
+
+        .warning {
+            background: #e3f0ff;
+
+            border-left:
+                6px solid #1565c0;
+
+            padding: 18px;
+
+            margin-bottom: 30px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #0d47a1;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= ACTION BUTTONS ================= */
+
+        .buttons {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+            background: white;
+
+            color: #0d47a1;
+
+            text-decoration: none;
+
+            width: 220px;
+
+            height: 210px;
+
+            margin: auto;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            text-align: center;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 18px rgba(0, 0, 0, 0.14);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        /* ================= ICON ================= */
+
+        .btn span {
+            font-size: 4.5rem;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        /* ================= HOVER ================= */
+
+        .btn:hover {
+            transform: scale(1.08);
+
+            background: #e3f0ff;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.22);
+
+            z-index: 10;
+        }
+
+
+        .btn:hover span {
+            transform: scale(1.15);
+        }
+
+
+        /* ================= INFORMATION ================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================= INFO CARDS ================= */
+
+        .info-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.10);
+
+            border-top:
+                5px solid #1565c0;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .info-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+
+
+        .info-card h3 {
+            color: #0d47a1;
+
+            margin-bottom: 12px;
+        }
+
+
+        .info-card p {
+            line-height: 1.6;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0d47a1;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+            margin-top: 30px;
+
+            border-top:
+                4px solid #64b5f6;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 900px) {
+
+            .buttons {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 200px;
+
+                height: 200px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        💳 Lost Card Support
+
+    </header>
+
+
+    <div class="section">
+
+
+        <!-- ================= WARNING ================= -->
+
+        <div class="warning">
+
+            ⚠️ If your college ID card or access card is lost,
+            report it as soon as possible so the card can be
+            blocked and unauthorized use can be prevented.
+
+        </div>
+
+
+        <!-- ================= ACTIONS ================= -->
+
+        <h2>
+
+            🆘 Lost Card Actions
+
+        </h2>
+
+
+        <div class="buttons">
+
+
+            <!-- CAMPUS OFFICE -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Campus Office"
+            >
+
+                <span>🏢</span>
+
+                Contact Campus Office
+
+            </a>
+
+
+            <!-- SECURITY -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Campus Security"
+            >
+
+                <span>🛡️</span>
+
+                Campus Security
+
+            </a>
+
+
+            <!-- REPORT CARD -->
+
+            <a
+                href="mailto:campushelp@example.com?subject=Lost%20College%20Card"
+                class="btn"
+                aria-label="Report Lost Card"
+            >
+
+                <span>📝</span>
+
+                Report Lost Card
+
+            </a>
+
+
+            <!-- CARD OFFICE -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Card Office"
+            >
+
+                <span>💳</span>
+
+                Card Office
+
+            </a>
+
+
+            <!-- FIND SECURITY -->
+
+            <a
+                href="https://www.google.com/maps/search/campus+security+near+me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                aria-label="Find Campus Security"
+            >
+
+                <span>📍</span>
+
+                Find Campus Security
+
+            </a>
+
+
+            <!-- LOST AND FOUND -->
+
+            <a
+                href="mailto:campushelp@example.com?subject=Lost%20and%20Found"
+                class="btn"
+                aria-label="Contact Lost and Found"
+            >
+
+                <span>🔎</span>
+
+                Lost & Found
+
+            </a>
+
+
+        </div>
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <h2>
+
+            📚 What To Do If Your Card Is Lost
+
+        </h2>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <h3>
+                    1️⃣ Report Immediately
+                </h3>
+
+                <p>
+                    Inform the appropriate college office or
+                    authorized campus official as soon as you
+                    notice that your card is missing.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    2️⃣ Block The Card
+                </h3>
+
+                <p>
+                    Ask the authorized card administrator to
+                    deactivate the lost card to reduce the risk
+                    of unauthorized access.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    3️⃣ Check Lost & Found
+                </h3>
+
+                <p>
+                    Contact the campus lost-and-found service
+                    and provide the relevant details needed to
+                    identify your card.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    4️⃣ Request Replacement
+                </h3>
+
+                <p>
+                    Follow your institution's procedure for
+                    obtaining a replacement student ID or
+                    access card.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🔐 Protect Your Information
+                </h3>
+
+                <p>
+                    Do not share sensitive personal information
+                    publicly while reporting a lost card.
+                    Use official college channels whenever possible.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    ✅ Keep The New Card Safe
+                </h3>
+
+                <p>
+                    After receiving a replacement card, keep it
+                    secure and follow the campus rules for using
+                    and protecting your student identification.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        Protect your identity. Report lost cards promptly.
+
+    </footer>
+
+
+</body>
+
+</html>

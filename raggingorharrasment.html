@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ragging & Harassment Support</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* ================= BODY ================= */
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f4ff;
+            color: #333;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #673ab7;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            font-size: 2rem;
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 40px 20px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* ================= HEADINGS ================= */
+
+        h2 {
+            color: #512da8;
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-size: 1.7rem;
+        }
+
+
+        /* ================= WARNING ================= */
+
+        .warning {
+            background: #eee7ff;
+
+            border-left: 6px solid #673ab7;
+
+            padding: 18px;
+
+            margin-bottom: 30px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #4527a0;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= SUPPORT BUTTONS ================= */
+
+        .buttons {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+            background: white;
+
+            color: #4527a0;
+
+            text-decoration: none;
+
+            width: 220px;
+
+            height: 210px;
+
+            margin: auto;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            text-align: center;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 18px rgba(0, 0, 0, 0.14);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        /* ================= ICON ================= */
+
+        .btn span {
+            font-size: 4.5rem;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        /* ================= HOVER ================= */
+
+        .btn:hover {
+            transform: scale(1.08);
+
+            background: #eee7ff;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.22);
+
+            z-index: 10;
+        }
+
+
+        .btn:hover span {
+            transform: scale(1.15);
+        }
+
+
+        /* ================= INFORMATION GRID ================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================= INFORMATION CARDS ================= */
+
+        .info-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.10);
+
+            border-top:
+                5px solid #673ab7;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .info-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+
+
+        .info-card h3 {
+            color: #512da8;
+
+            margin-bottom: 12px;
+        }
+
+
+        .info-card p {
+            line-height: 1.6;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #4527a0;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+            margin-top: 30px;
+
+            border-top:
+                4px solid #9575cd;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 900px) {
+
+            .buttons {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 200px;
+
+                height: 200px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        🛡️ Ragging & Harassment Support
+
+    </header>
+
+
+    <div class="section">
+
+
+        <!-- ================= WARNING ================= -->
+
+        <div class="warning">
+
+            ⚠️ Everyone has the right to study in a safe and
+            respectful environment. If you experience or witness
+            ragging or harassment, report it to an authorized
+            campus support person.
+
+        </div>
+
+
+        <!-- ================= SUPPORT SERVICES ================= -->
+
+        <h2>
+
+            🆘 Support Services
+
+        </h2>
+
+
+        <div class="buttons">
+
+
+            <!-- CAMPUS OFFICIAL -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Campus Official"
+            >
+
+                <span>👨‍💼</span>
+
+                Contact Campus Official
+
+            </a>
+
+
+            <!-- COUNSELLOR -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Student Counsellor"
+            >
+
+                <span>🧑‍🏫</span>
+
+                Student Counsellor
+
+            </a>
+
+
+            <!-- SECURITY -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Campus Security"
+            >
+
+                <span>🛡️</span>
+
+                Campus Security
+
+            </a>
+
+
+            <!-- REPORT -->
+
+            <a
+                href="mailto:campushelp@example.com"
+                class="btn"
+                aria-label="Report Ragging or Harassment"
+            >
+
+                <span>📝</span>
+
+                Report Incident
+
+            </a>
+
+
+            <!-- SUPPORT OFFICE -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Student Support Office"
+            >
+
+                <span>🤝</span>
+
+                Student Support Office
+
+            </a>
+
+
+            <!-- SAFETY LOCATION -->
+
+            <a
+                href="https://www.google.com/maps/search/campus+security+near+me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                aria-label="Find Campus Security"
+            >
+
+                <span>📍</span>
+
+                Find Campus Security
+
+            </a>
+
+
+        </div>
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <h2>
+
+            📚 Know Your Rights & Safety
+
+        </h2>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <h3>
+                    🚫 Ragging Is Not Acceptable
+                </h3>
+
+                <p>
+                    Students should be able to participate in college
+                    activities without intimidation, humiliation,
+                    threats, or unwanted treatment.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    📢 Report Early
+                </h3>
+
+                <p>
+                    If something feels unsafe, inform an authorized
+                    campus official, counsellor, or other trusted
+                    support person as soon as possible.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🤝 Support Others
+                </h3>
+
+                <p>
+                    If you witness inappropriate behaviour, encourage
+                    the affected student to seek help and inform the
+                    appropriate campus authority.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🔒 Privacy
+                </h3>
+
+                <p>
+                    Use the reporting channels provided by your
+                    institution and ask the responsible authority
+                    how reports and personal information are handled.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🧑‍🏫 Counselling Support
+                </h3>
+
+                <p>
+                    Students can approach an authorized counsellor
+                    or student-support service when they need help
+                    dealing with a difficult campus situation.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🛡️ Stay Safe
+                </h3>
+
+                <p>
+                    Move toward a safe and supervised location when
+                    you feel threatened and seek assistance from
+                    responsible campus personnel.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        Your safety and dignity matter.
+
+    </footer>
+
+
+</body>
+
+</html>

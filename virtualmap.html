@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual College Tour - PVPSIT</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Virtual college tour with aesthetic icons for PVPSIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: #16a085;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .map-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      max-width: 1000px;
+    }
+
+    .location {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .location span {
+      font-size: 3rem; /* big icon */
+      margin-bottom: 10px;
+    }
+
+    .location:hover {
+      transform: scale(1.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      background: #eafaf7;
+    }
+
+    footer {
+      background: #f4f6f9;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #ddd;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>🗺️ Virtual College Tour - PVPSIT</header>
+
+  <div class="map-container">
+    <a class="location" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=PVPSIT+Main+Entrance+Kanuru+Vijayawada">
+      <span>🚪</span> Entrance
+    </a>
+    <a class="location" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=PVPSIT+Exit+Gate+Kanuru+Vijayawada">
+      <span>🚪</span> Exit
+    </a>
+    <a class="location" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=PVPSIT+Library+Kanuru+Vijayawada">
+      <span>📚</span> Library
+    </a>
+    <a class="location" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=PVPSIT+Play+Ground+Kanuru+Vijayawada">
+      <span>🏏</span> Play Ground
+    </a>
+    <a class="location" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=PVPSIT+Stationary+Store+Kanuru+Vijayawada">
+      <span>📝</span> Stationary
+    </a>
+    <a class="location" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=PVPSIT+Canteen+Kanuru+Vijayawada">
+      <span>🍴</span> Canteen
+    </a>
+  </div>
+
+  <footer>Hover over a location to highlight it, click to see the route from your current position.</footer>
+</body>
+</html>

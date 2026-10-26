@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeCampus | Emergency Help</title>
+
+    <style>
+
+        /* ================= RESET ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ================= BODY ================= */
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            color: #17233c;
+
+            overflow-x: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dcecff 0%,
+                    #edf4ff 30%,
+                    #f8edff 65%,
+                    #e5faff 100%
+                );
+        }
+
+
+        /* ================================================= */
+        /* ================= BACKGROUND ==================== */
+        /* ================================================= */
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        /* ================= LARGE GLOW OBJECTS ================= */
+
+        .orb {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(8px);
+
+            opacity: 0.55;
+
+            animation:
+                floatOrb 10s infinite ease-in-out;
+        }
+
+
+        .orb1 {
+
+            width: 320px;
+            height: 320px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(90,160,255,0.55),
+                    rgba(90,160,255,0.05)
+                );
+
+            top: -100px;
+            left: -100px;
+        }
+
+
+        .orb2 {
+
+            width: 380px;
+            height: 380px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(190,100,255,0.45),
+                    rgba(190,100,255,0.05)
+                );
+
+            right: -120px;
+            top: 25%;
+
+            animation-delay: 2s;
+        }
+
+
+        .orb3 {
+
+            width: 280px;
+            height: 280px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(40,210,190,0.42),
+                    rgba(40,210,190,0.05)
+                );
+
+            bottom: -100px;
+            left: 30%;
+
+            animation-delay: 4s;
+        }
+
+
+        .orb4 {
+
+            width: 220px;
+            height: 220px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,130,180,0.38),
+                    rgba(255,130,180,0.05)
+                );
+
+            top: 45%;
+            left: 5%;
+
+            animation-delay: 6s;
+        }
+
+
+        .orb5 {
+
+            width: 200px;
+            height: 200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,190,80,0.32),
+                    rgba(255,190,80,0.05)
+                );
+
+            bottom: 10%;
+            right: 10%;
+
+            animation-delay: 8s;
+        }
+
+
+        @keyframes floatOrb {
+
+            0% {
+
+                transform:
+                    translate(0, 0)
+                    scale(1);
+
+            }
+
+            25% {
+
+                transform:
+                    translate(70px, -50px)
+                    scale(1.15);
+
+            }
+
+            50% {
+
+                transform:
+                    translate(-30px, -100px)
+                    scale(0.95);
+
+            }
+
+            75% {
+
+                transform:
+                    translate(-80px, 40px)
+                    scale(1.12);
+
+            }
+
+            100% {
+
+                transform:
+                    translate(0, 0)
+                    scale(1);
+
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= FLOATING CIRCLES =============== */
+        /* ================================================= */
+
+        .circle {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border: 2px solid rgba(255,255,255,0.75);
+
+            background:
+                rgba(255,255,255,0.18);
+
+            backdrop-filter: blur(3px);
+
+            box-shadow:
+                0 0 20px rgba(90,150,255,0.25);
+
+            animation:
+                moveCircle 12s infinite ease-in-out;
+        }
+
+
+        .circle1 {
+
+            width: 45px;
+            height: 45px;
+
+            left: 8%;
+            top: 20%;
+
+            animation-duration: 9s;
+        }
+
+
+        .circle2 {
+
+            width: 70px;
+            height: 70px;
+
+            left: 22%;
+            bottom: 15%;
+
+            animation-duration: 13s;
+
+            animation-delay: 2s;
+        }
+
+
+        .circle3 {
+
+            width: 35px;
+            height: 35px;
+
+            right: 25%;
+            top: 18%;
+
+            animation-duration: 8s;
+
+            animation-delay: 3s;
+        }
+
+
+        .circle4 {
+
+            width: 85px;
+            height: 85px;
+
+            right: 8%;
+            bottom: 20%;
+
+            animation-duration: 15s;
+
+            animation-delay: 4s;
+        }
+
+
+        .circle5 {
+
+            width: 30px;
+            height: 30px;
+
+            left: 48%;
+            top: 12%;
+
+            animation-duration: 10s;
+
+            animation-delay: 1s;
+        }
+
+
+        @keyframes moveCircle {
+
+            0% {
+
+                transform:
+                    translate(0, 0)
+                    rotate(0deg);
+
+            }
+
+            25% {
+
+                transform:
+                    translate(80px, -60px)
+                    rotate(90deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translate(-40px, -120px)
+                    rotate(180deg);
+
+            }
+
+            75% {
+
+                transform:
+                    translate(-90px, 30px)
+                    rotate(270deg);
+
+            }
+
+            100% {
+
+                transform:
+                    translate(0, 0)
+                    rotate(360deg);
+
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= BUBBLES ======================== */
+        /* ================================================= */
+
+        .bubble {
+
+            position: absolute;
+
+            bottom: -100px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.7),
+                    rgba(170,210,255,0.25)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.9);
+
+            box-shadow:
+                0 0 18px rgba(100,170,255,0.2);
+
+            animation:
+                bubbleUp linear infinite;
+        }
+
+
+        .bubble1 {
+
+            width: 25px;
+            height: 25px;
+
+            left: 5%;
+
+            animation-duration: 8s;
+        }
+
+
+        .bubble2 {
+
+            width: 45px;
+            height: 45px;
+
+            left: 18%;
+
+            animation-duration: 12s;
+
+            animation-delay: 2s;
+        }
+
+
+        .bubble3 {
+
+            width: 18px;
+            height: 18px;
+
+            left: 38%;
+
+            animation-duration: 7s;
+
+            animation-delay: 1s;
+        }
+
+
+        .bubble4 {
+
+            width: 55px;
+            height: 55px;
+
+            left: 62%;
+
+            animation-duration: 14s;
+
+            animation-delay: 3s;
+        }
+
+
+        .bubble5 {
+
+            width: 30px;
+            height: 30px;
+
+            left: 80%;
+
+            animation-duration: 9s;
+
+            animation-delay: 4s;
+        }
+
+
+        .bubble6 {
+
+            width: 20px;
+            height: 20px;
+
+            left: 92%;
+
+            animation-duration: 11s;
+
+            animation-delay: 2s;
+        }
+
+
+        @keyframes bubbleUp {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    translateX(0)
+                    scale(0.8);
+
+                opacity: 0;
+            }
+
+            15% {
+
+                opacity: 0.8;
+            }
+
+            50% {
+
+                transform:
+                    translateY(-50vh)
+                    translateX(40px)
+                    scale(1.1);
+
+                opacity: 0.7;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-120vh)
+                    translateX(-50px)
+                    scale(1.3);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= PARTICLES ====================== */
+        /* ================================================= */
+
+        .particle {
+
+            position: absolute;
+
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 12px rgba(70,130,255,0.8);
+
+            animation:
+                particleFloat linear infinite;
+        }
+
+
+        .p1 {
+            left: 12%;
+            top: 80%;
+            animation-duration: 6s;
+        }
+
+        .p2 {
+            left: 28%;
+            top: 70%;
+            animation-duration: 8s;
+        }
+
+        .p3 {
+            left: 45%;
+            top: 85%;
+            animation-duration: 7s;
+        }
+
+        .p4 {
+            left: 60%;
+            top: 75%;
+            animation-duration: 10s;
+        }
+
+        .p5 {
+            left: 75%;
+            top: 90%;
+            animation-duration: 6s;
+        }
+
+        .p6 {
+            left: 88%;
+            top: 65%;
+            animation-duration: 9s;
+        }
+
+        .p7 {
+            left: 35%;
+            top: 30%;
+            animation-duration: 7s;
+        }
+
+        .p8 {
+            left: 68%;
+            top: 35%;
+            animation-duration: 8s;
+        }
+
+        .p9 {
+            left: 5%;
+            top: 50%;
+            animation-duration: 11s;
+        }
+
+        .p10 {
+            left: 95%;
+            top: 45%;
+            animation-duration: 7s;
+        }
+
+
+        @keyframes particleFloat {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            20% {
+
+                opacity: 1;
+            }
+
+            50% {
+
+                transform:
+                    translateY(-250px)
+                    scale(1.3);
+
+                opacity: 0.8;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-600px)
+                    scale(0.3);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= ROTATING RINGS ================= */
+        /* ================================================= */
+
+        .ring {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border:
+                2px dashed rgba(110,160,255,0.25);
+
+            animation:
+                rotateRing 20s linear infinite;
+        }
+
+
+        .ring1 {
+
+            width: 420px;
+            height: 420px;
+
+            left: -150px;
+            top: 35%;
+        }
+
+
+        .ring2 {
+
+            width: 300px;
+            height: 300px;
+
+            right: -100px;
+            top: 5%;
+
+            border-color:
+                rgba(190,120,255,0.25);
+
+            animation-duration: 15s;
+
+            animation-direction: reverse;
+        }
+
+
+        .ring3 {
+
+            width: 250px;
+            height: 250px;
+
+            right: 30%;
+            bottom: -120px;
+
+            border-color:
+                rgba(50,190,190,0.25);
+
+            animation-duration: 18s;
+        }
+
+
+        @keyframes rotateRing {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= MAIN CONTENT =================== */
+        /* ================================================= */
+
+        .main {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 100%;
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 45px 25px 60px;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .top-header {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+            animation:
+                headerEnter 0.9s ease forwards;
+        }
+
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 9px 20px;
+
+            margin-bottom: 18px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(255,255,255,0.55);
+
+            border:
+                1px solid rgba(255,255,255,0.8);
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 8px 25px rgba(70,100,150,0.12);
+
+            font-size: 0.85rem;
+
+            color: #34425c;
+        }
+
+
+        .status-dot {
+
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #19c878;
+
+            box-shadow:
+                0 0 12px #19c878;
+
+            animation:
+                statusBlink 1.5s infinite;
+        }
+
+
+        @keyframes statusBlink {
+
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.35;
+            }
+        }
+
+
+        .top-header h1 {
+
+            font-size:
+                clamp(2rem, 5vw, 3.5rem);
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+
+            color: #20304c;
+
+            text-shadow:
+                0 5px 20px rgba(60,100,160,0.15);
+        }
+
+
+        .top-header h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #e63946,
+                    #b83280,
+                    #5b5fe9
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .top-header p {
+
+            color: #53627a;
+
+            font-size: 1rem;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        @keyframes headerEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= EMERGENCY BAR ================== */
+        /* ================================================= */
+
+        .emergency-bar {
+
+            width: 100%;
+
+            max-width: 800px;
+
+            margin: 0 auto 45px;
+
+            padding: 18px 25px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 12px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.58);
+
+            border:
+                1px solid rgba(255,255,255,0.85);
+
+            box-shadow:
+                0 12px 30px rgba(60,90,140,0.13);
+
+            backdrop-filter:
+                blur(15px);
+
+            color: #263651;
+
+            font-weight: 600;
+
+            animation:
+                barFloat 3s infinite ease-in-out;
+        }
+
+
+        .emergency-bar .warning {
+
+            font-size: 1.5rem;
+
+            animation:
+                warningPulse 1.3s infinite;
+        }
+
+
+        @keyframes warningPulse {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+
+        @keyframes barFloat {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= CARDS ========================== */
+        /* ================================================= */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .card {
+
+            position: relative;
+
+            min-height: 240px;
+
+            padding: 30px 25px;
+
+            border-radius: 24px;
+
+            color: white;
+
+            text-decoration: none;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            border:
+                1px solid rgba(255,255,255,0.5);
+
+            box-shadow:
+                0 15px 35px rgba(50,80,130,0.18);
+
+            opacity: 0;
+
+            animation:
+                cardEnter 0.7s ease forwards;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+
+        .card:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.35s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        .card:nth-child(5) {
+            animation-delay: 0.55s;
+        }
+
+        .card:nth-child(6) {
+            animation-delay: 0.65s;
+        }
+
+
+        @keyframes cardEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    scale(0.95);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* ================= CARD SHINE ================= */
+
+        .card::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -130%;
+
+            width: 60%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.35),
+                    transparent
+                );
+
+            transform:
+                skewX(-20deg);
+
+            transition:
+                left 0.7s ease;
+        }
+
+
+        .card:hover::after {
+
+            left: 140%;
+        }
+
+
+        /* ================= CARD HOVER ================= */
+
+        .card:hover {
+
+            transform:
+                translateY(-12px)
+                scale(1.03);
+
+            box-shadow:
+                0 25px 50px rgba(50,80,130,0.28);
+        }
+
+
+        /* ================= ICON ================= */
+
+        .icon {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 85px;
+            height: 85px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 24px;
+
+            background:
+                rgba(255,255,255,0.2);
+
+            border:
+                1px solid rgba(255,255,255,0.45);
+
+            font-size: 3.4rem;
+
+            margin-bottom: 18px;
+
+            backdrop-filter:
+                blur(8px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.12);
+
+            transition:
+                transform 0.35s ease;
+        }
+
+
+        .card:hover .icon {
+
+            transform:
+                translateY(-8px)
+                rotate(-5deg)
+                scale(1.12);
+        }
+
+
+        /* ================= TEXT ================= */
+
+        .card h3 {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 1.25rem;
+
+            margin-bottom: 8px;
+        }
+
+
+        .card p {
+
+            position: relative;
+
+            z-index: 2;
+
+            color:
+                rgba(255,255,255,0.9);
+
+            font-size: 0.88rem;
+
+            line-height: 1.5;
+
+            max-width: 250px;
+        }
+
+
+        /* ================================================= */
+        /* ================= CARD COLORS ==================== */
+        /* ================================================= */
+
+        .medical {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #20b486,
+                    #08765c
+                );
+        }
+
+
+        .security {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4285d4,
+                    #23518f
+                );
+        }
+
+
+        .ragging {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a958d4,
+                    #713c91
+                );
+        }
+
+
+        .fire {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9f43,
+                    #e05b19
+                );
+        }
+
+
+        .map {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #16bfa4,
+                    #087b6c
+                );
+        }
+
+
+        .lost {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #607d9b,
+                    #34495e
+                );
+        }
+
+
+        /* ================================================= */
+        /* ================= FOOTER ========================== */
+        /* ================================================= */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 45px;
+
+            color: #52627a;
+
+            font-size: 0.85rem;
+
+            padding: 15px;
+        }
+
+
+        .footer span {
+
+            color: #e63946;
+
+            animation:
+                statusBlink 1.2s infinite;
+        }
+
+
+        /* ================================================= */
+        /* ================= TABLET ========================= */
+        /* ================================================= */
+
+        @media (max-width: 900px) {
+
+            .cards {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= MOBILE ========================= */
+        /* ================================================= */
+
+        @media (max-width: 600px) {
+
+            .main {
+
+                padding:
+                    30px 15px 40px;
+            }
+
+
+            .top-header {
+
+                margin-bottom: 30px;
+            }
+
+
+            .top-header h1 {
+
+                font-size: 1.9rem;
+            }
+
+
+            .top-header p {
+
+                font-size: 0.85rem;
+            }
+
+
+            .emergency-bar {
+
+                margin-bottom: 30px;
+
+                font-size: 0.85rem;
+
+                padding: 15px;
+            }
+
+
+            .cards {
+
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+
+            .card {
+
+                min-height: 205px;
+
+                border-radius: 20px;
+            }
+
+
+            .icon {
+
+                width: 70px;
+                height: 70px;
+
+                font-size: 2.7rem;
+            }
+
+
+            .card h3 {
+
+                font-size: 1.1rem;
+            }
+
+
+            .ring1 {
+
+                width: 250px;
+                height: 250px;
+            }
+
+            .ring2 {
+
+                width: 200px;
+                height: 200px;
+            }
+
+            .ring3 {
+
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= REDUCED MOTION ================= */
+        /* ================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation: none !important;
+
+                transition: none !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!-- ================= ANIMATED BACKGROUND ============ -->
+    <!-- ================================================= -->
+
+    <div class="background">
+
+        <!-- Large moving glow objects -->
+
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+        <div class="orb orb4"></div>
+        <div class="orb orb5"></div>
+
+
+        <!-- Rotating rings -->
+
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+
+
+        <!-- Floating glass circles -->
+
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+        <div class="circle circle5"></div>
+
+
+        <!-- Bubbles -->
+
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+        <div class="bubble bubble4"></div>
+        <div class="bubble bubble5"></div>
+        <div class="bubble bubble6"></div>
+
+
+        <!-- Floating particles -->
+
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+        <div class="particle p7"></div>
+        <div class="particle p8"></div>
+        <div class="particle p9"></div>
+        <div class="particle p10"></div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ================= MAIN =========================== -->
+    <!-- ================================================= -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                Emergency System Online
+
+            </div>
+
+
+            <h1>
+
+                🚨 <span>SafeCampus</span>
+
+            </h1>
+
+
+            <p>
+
+                Quick access to campus emergency assistance
+
+            </p>
+
+        </header>
+
+
+        <!-- EMERGENCY BAR -->
+
+        <div class="emergency-bar">
+
+            <span class="warning">⚠️</span>
+
+            <span>
+                Select the emergency service you need
+            </span>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- ================= CARDS ========================= -->
+        <!-- ================================================= -->
+
+        <div class="cards">
+
+
+            <!-- MEDICAL -->
+
+            <a
+                href="medicalEmergency.html"
+                class="card medical"
+            >
+
+                <div class="icon">
+                    🚑
+                </div>
+
+                <h3>
+                    Medical Emergency
+                </h3>
+
+                <p>
+                    Get immediate medical assistance
+                </p>
+
+            </a>
+
+
+            <!-- SECURITY -->
+
+            <a
+                href="secuirity&safety.html"
+                class="card security"
+            >
+
+                <div class="icon">
+                    👮
+                </div>
+
+                <h3>
+                    Security & Safety
+                </h3>
+
+                <p>
+                    Contact campus security
+                </p>
+
+            </a>
+
+
+            <!-- RAGGING -->
+
+            <a
+                href="raggingorharrasment.html"
+                class="card ragging"
+            >
+
+                <div class="icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Ragging / Harassment
+                </h3>
+
+                <p>
+                    Get confidential support
+                </p>
+
+            </a>
+
+
+            <!-- FIRE -->
+
+            <a
+                href="fireemergency.html"
+                class="card fire"
+            >
+
+                <div class="icon">
+                    🔥
+                </div>
+
+                <h3>
+                    Fire Emergency
+                </h3>
+
+                <p>
+                    Emergency fire assistance
+                </p>
+
+            </a>
+
+
+            <!-- MAP -->
+
+            <a
+                href="virtualMap.html"
+                class="card map"
+            >
+
+                <div class="icon">
+                    🗺️
+                </div>
+
+                <h3>
+                    Virtual Campus Map
+                </h3>
+
+                <p>
+                    Find important campus locations
+                </p>
+
+            </a>
+
+
+            <!-- LOST -->
+
+            <a
+                href="cardlost.html"
+                class="card lost"
+            >
+
+                <div class="icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Lost & Found
+                </h3>
+
+                <p>
+                    Find or report lost items
+                </p>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span>●</span>
+
+            Stay calm. Help is only one click away.
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>

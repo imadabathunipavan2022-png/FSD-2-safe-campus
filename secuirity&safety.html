@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Security & Safety</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* ================= BODY ================= */
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+
+            background: #f4f8ff;
+
+            color: #333;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #1e3a8a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            font-size: 2rem;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 40px 20px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* ================= HEADINGS ================= */
+
+        h2 {
+            color: #173b8f;
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-size: 1.7rem;
+        }
+
+
+        /* ================= WARNING ================= */
+
+        .warning {
+            background: #e8f0ff;
+
+            border-left:
+                6px solid #1e3a8a;
+
+            padding: 18px;
+
+            margin-bottom: 30px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #173b8f;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= SECURITY BUTTONS ================= */
+
+        .buttons {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+            background: white;
+
+            color: #173b8f;
+
+            text-decoration: none;
+
+            width: 220px;
+
+            height: 210px;
+
+            margin: auto;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            text-align: center;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 18px rgba(0, 0, 0, 0.14);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        /* ================= ICON ================= */
+
+        .btn span {
+            font-size: 4.5rem;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        /* ================= HOVER ================= */
+
+        .btn:hover {
+            transform: scale(1.08);
+
+            background: #e8f0ff;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.22);
+
+            z-index: 10;
+        }
+
+
+        .btn:hover span {
+            transform: scale(1.15);
+        }
+
+
+        /* ================= SAFETY INFORMATION ================= */
+
+        .safety-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================= SAFETY CARD ================= */
+
+        .safety-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.10);
+
+            border-top:
+                5px solid #1e3a8a;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .safety-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+
+
+        .safety-card h3 {
+            color: #173b8f;
+
+            margin-bottom: 12px;
+        }
+
+
+        .safety-card p {
+            line-height: 1.6;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #102a68;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+            margin-top: 30px;
+
+            border-top:
+                4px solid #60a5fa;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 900px) {
+
+            .buttons {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .safety-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 200px;
+
+                height: 200px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        🛡️ Campus Security & Safety
+
+    </header>
+
+
+    <div class="section">
+
+
+        <!-- ================= WARNING ================= -->
+
+        <div class="warning">
+
+            ⚠️ If you feel unsafe on campus, move toward a
+            supervised or secure location and contact an
+            authorized campus security or support official.
+
+        </div>
+
+
+        <!-- ================= SECURITY SERVICES ================= -->
+
+        <h2>
+
+            🆘 Security Services
+
+        </h2>
+
+
+        <div class="buttons">
+
+
+            <!-- CAMPUS SECURITY -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Campus Security"
+            >
+
+                <span>🛡️</span>
+
+                Campus Security
+
+            </a>
+
+
+            <!-- CAMPUS OFFICIAL -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Campus Official"
+            >
+
+                <span>👨‍💼</span>
+
+                Campus Official
+
+            </a>
+
+
+            <!-- SECURITY OFFICE -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Contact Security Office"
+            >
+
+                <span>🏢</span>
+
+                Security Office
+
+            </a>
+
+
+            <!-- REPORT INCIDENT -->
+
+            <a
+                href="mailto:campushelp@example.com?subject=Campus%20Safety%20Report"
+                class="btn"
+                aria-label="Report Safety Incident"
+            >
+
+                <span>📝</span>
+
+                Report Incident
+
+            </a>
+
+
+            <!-- SECURITY LOCATION -->
+
+            <a
+                href="https://www.google.com/maps/search/campus+security+near+me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                aria-label="Find Campus Security"
+            >
+
+                <span>📍</span>
+
+                Find Security
+
+            </a>
+
+
+            <!-- SAFE LOCATION -->
+
+            <a
+                href="https://www.google.com/maps/search/safe+place+near+me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                aria-label="Find Safe Location"
+            >
+
+                <span>🏠</span>
+
+                Find Safe Location
+
+            </a>
+
+
+        </div>
+
+
+        <!-- ================= SAFETY INFORMATION ================= -->
+
+        <h2>
+
+            🔐 Campus Safety Information
+
+        </h2>
+
+
+        <div class="safety-grid">
+
+
+            <div class="safety-card">
+
+                <h3>
+                    🛡️ Campus Security
+                </h3>
+
+                <p>
+                    Campus security personnel help maintain a safe
+                    environment and can guide students toward
+                    appropriate support services.
+                </p>
+
+            </div>
+
+
+            <div class="safety-card">
+
+                <h3>
+                    👀 Stay Aware
+                </h3>
+
+                <p>
+                    Stay aware of your surroundings and follow
+                    campus safety instructions, especially in
+                    unfamiliar or crowded areas.
+                </p>
+
+            </div>
+
+
+            <div class="safety-card">
+
+                <h3>
+                    📢 Report Concerns
+                </h3>
+
+                <p>
+                    Report suspicious or unsafe situations through
+                    the official campus reporting channels so the
+                    responsible authorities can respond.
+                </p>
+
+            </div>
+
+
+            <div class="safety-card">
+
+                <h3>
+                    🚪 Emergency Exits
+                </h3>
+
+                <p>
+                    Become familiar with emergency exits and
+                    designated safe areas in the buildings you
+                    regularly use.
+                </p>
+
+            </div>
+
+
+            <div class="safety-card">
+
+                <h3>
+                    📍 Safe Locations
+                </h3>
+
+                <p>
+                    Identify supervised areas such as campus
+                    security offices, administrative offices,
+                    reception areas, or other designated safe
+                    locations.
+                </p>
+
+            </div>
+
+
+            <div class="safety-card">
+
+                <h3>
+                    🤝 Get Support
+                </h3>
+
+                <p>
+                    If you are concerned about your safety, seek
+                    help from an authorized campus official,
+                    counsellor, security officer, or trusted adult.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        Stay alert. Stay safe. Help keep your campus secure.
+
+    </footer>
+
+
+</body>
+
+</html>

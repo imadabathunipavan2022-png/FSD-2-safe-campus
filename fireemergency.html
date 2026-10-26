@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>College Fire Emergency</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* ================= BODY ================= */
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fff8f3;
+            color: #333;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #c62828;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            font-size: 2rem;
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 40px 20px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* ================= HEADINGS ================= */
+
+        h2 {
+            color: #b71c1c;
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-size: 1.7rem;
+        }
+
+
+        /* ================= WARNING ================= */
+
+        .warning {
+            background: #fff0e6;
+
+            border-left: 6px solid #f4511e;
+
+            padding: 18px;
+
+            margin-bottom: 30px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #b71c1c;
+        }
+
+
+        /* ================= EMERGENCY BUTTONS ================= */
+
+        .buttons {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* ================= BUTTON CARDS ================= */
+
+        .btn {
+            background: white;
+
+            color: #b71c1c;
+
+            text-decoration: none;
+
+            width: 220px;
+
+            height: 210px;
+
+            margin: auto;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            text-align: center;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 18px rgba(0, 0, 0, 0.14);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        /* ================= LARGE ICONS ================= */
+
+        .btn span {
+            font-size: 4.5rem;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        /* ================= HOVER ================= */
+
+        .btn:hover {
+            transform: scale(1.08);
+
+            background: #fff0e6;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.25);
+
+            z-index: 10;
+        }
+
+
+        .btn:hover span {
+            transform: scale(1.15);
+        }
+
+
+        /* ================= SAFETY SECTION ================= */
+
+        .safety-section {
+            margin-top: 20px;
+        }
+
+
+        .safety-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================= SAFETY CARDS ================= */
+
+        .safety-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.10);
+
+            border-top:
+                5px solid #f4511e;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .safety-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+
+
+        .safety-card h3 {
+            color: #d84315;
+
+            margin-bottom: 12px;
+        }
+
+
+        .safety-card p {
+            line-height: 1.6;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #8e0000;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+            margin-top: 30px;
+
+            border-top:
+                4px solid #ff9800;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 900px) {
+
+            .buttons {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .safety-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 200px;
+
+                height: 200px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        🔥 College Fire Emergency
+
+    </header>
+
+
+    <div class="section">
+
+
+        <!-- ================= WARNING ================= -->
+
+        <div class="warning">
+
+            ⚠️ In case of fire, stay calm, alert others,
+            evacuate immediately and follow authorized
+            emergency procedures.
+
+        </div>
+
+
+        <!-- ================= FIRE SERVICES ================= -->
+
+        <h2>
+
+            🔥 Fire Emergency Services
+
+        </h2>
+
+
+        <div class="buttons">
+
+
+            <!-- FIRE ENGINE -->
+
+            <a
+                href="tel:101"
+                class="btn"
+                aria-label="Call Fire Engine"
+            >
+
+                <span>🚒</span>
+
+                Call Fire Engine (101)
+
+            </a>
+
+
+            <!-- CAMPUS OFFICIALS -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Call Campus Officials"
+            >
+
+                <span>👨‍💼</span>
+
+                Inform Campus Officials
+
+            </a>
+
+
+            <!-- FIRE EXITS -->
+
+            <a
+                href="https://www.google.com/maps/search/fire+exit+near+me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                aria-label="Find Nearby Fire Exits"
+            >
+
+                <span>🚪</span>
+
+                Nearby Fire Exits
+
+            </a>
+
+
+            <!-- FIRE HELP CENTRE -->
+
+            <a
+                href="tel:1234567890"
+                class="btn"
+                aria-label="Call Fire Help Centre"
+            >
+
+                <span>🆘</span>
+
+                Fire Help Centre
+
+            </a>
+
+
+            <!-- ASSEMBLY POINT -->
+
+            <a
+                href="https://www.google.com/maps/search/emergency+assembly+point+near+me"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                aria-label="Find Emergency Assembly Point"
+            >
+
+                <span>📍</span>
+
+                Emergency Assembly Point
+
+            </a>
+
+
+            <!-- REPORT INCIDENT -->
+
+            <a
+                href="mailto:campushelp@example.com"
+                class="btn"
+                aria-label="Report Fire Incident"
+            >
+
+                <span>📝</span>
+
+                Report Fire Incident
+
+            </a>
+
+
+        </div>
+
+
+        <!-- ================= FIRE SAFETY ================= -->
+
+        <div class="safety-section">
+
+
+            <h2>
+
+                🧯 Fire Safety Information
+
+            </h2>
+
+
+            <div class="safety-grid">
+
+
+                <div class="safety-card">
+
+                    <h3>
+                        🔥 Fire Safety Instructions
+                    </h3>
+
+                    <p>
+                        Stay calm and immediately alert people nearby.
+                        Do not use elevators during a fire. Follow the
+                        nearest safe emergency exit and move to a safe
+                        location.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <h3>
+                        🧯 Fire Extinguisher Guide
+                    </h3>
+
+                    <p>
+                        Use a fire extinguisher only if the fire is small
+                        and you have been trained to use it. Keep a safe
+                        distance and never put yourself at risk.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <h3>
+                        🚪 Evacuation Procedure
+                    </h3>
+
+                    <p>
+                        Leave the building using the nearest safe exit.
+                        Do not run or push others. Follow instructions
+                        from campus officials and emergency personnel.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <h3>
+                        💨 Smoke Safety
+                    </h3>
+
+                    <p>
+                        If there is heavy smoke, stay low and move toward
+                        a safe exit. Avoid breathing smoke and follow
+                        emergency evacuation instructions.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <h3>
+                        📍 Assembly Point
+                    </h3>
+
+                    <p>
+                        After leaving the building, move to the designated
+                        emergency assembly point. Stay there until campus
+                        officials confirm that it is safe to return.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <h3>
+                        📞 Emergency Numbers
+                    </h3>
+
+                    <p>
+                        Fire Emergency: 101<br>
+                        General Emergency: 112<br>
+                        Campus Emergency: Contact your campus officials.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        Stay calm. Stay safe. Follow emergency instructions.
+
+    </footer>
+
+
+</body>
+
+</html>

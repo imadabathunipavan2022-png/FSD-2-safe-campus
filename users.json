@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1792855854049",
+        "name": "Imadabathuni PavanTeja",
+        "email": "ipavanteja24@gmail.com",
+        "rollNumber": "24501a4222",
+        "department": "csm",
+        "password": "$2b$10$WVYiHkrsLAfcFYTsZEI8nOLttbMYlnccI1FQBNtBM23qjRr1Yh9Ja",
+        "role": "student",
+        "createdAt": "2026-10-24T15:30:54.049Z"
+    },
+    {
+        "id": "1792855920558",
+        "name": "Imadabathuni PavanTeja",
+        "email": "imadabathunipavan2022@gmail.com",
+        "rollNumber": "24501a4222",
+        "department": "csm",
+        "password": "$2b$10$lsJUf8gFrTeyn8FV623hu.0.84yuXSXWfFPuqWx1sqdA9SyOW.cNi",
+        "role": "student",
+        "createdAt": "2026-10-24T15:32:00.558Z"
+    },
+    {
+        "id": "1792859778655",
+        "name": "tej",
+        "email": "24501a4222@pvpsit.ac.in",
+        "rollNumber": "24501a4222",
+        "department": "csm",
+        "password": "$2b$10$V5Hmf2bTfikCp73UqxiyY.ug2UJlPGyOps1mLTKQKRli.vrvdltmC",
+        "role": "student",
+        "createdAt": "2026-10-24T16:36:18.661Z"
+    }
+]

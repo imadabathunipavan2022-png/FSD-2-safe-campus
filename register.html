@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | SafeCampusSOS</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            padding: 30px;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            background: #111827;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f87171;
+        }
+
+        .subtitle, .footer {
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        label {
+            display: block;
+            margin: 14px 0 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            background: #1e293b;
+            color: white;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #dc2626;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+        }
+
+        #message {
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #f87171;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>SafeCampusSOS</h1>
+        <p class="subtitle">Create your student account</p>
+
+        <form id="registerForm">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" required>
+
+            <label for="email">Email Address</label>
+            <input id="email" type="email" required>
+
+            <label for="rollNumber">Roll Number</label>
+            <input id="rollNumber" type="text">
+
+            <label for="department">Department</label>
+            <input id="department" type="text">
+
+            <label for="password">Password (minimum 8 characters)</label>
+            <input id="password" type="password" minlength="8" required>
+
+            <button id="registerButton" type="submit">Register</button>
+        </form>
+
+        <p id="message" role="status" aria-live="polite"></p>
+
+        <div class="footer">
+            Already registered? <a href="/login.html">Login here</a>
+        </div>
+
+        <div class="footer">
+            <a href="/">Back to Home</a>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("registerForm");
+        const message = document.getElementById("message");
+        const button = document.getElementById("registerButton");
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            button.disabled = true;
+            button.textContent = "Registering...";
+            message.textContent = "";
+
+            const user = {
+                name: document.getElementById("name").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                rollNumber: document.getElementById("rollNumber").value.trim(),
+                department: document.getElementById("department").value.trim(),
+                password: document.getElementById("password").value
+            };
+
+            try {
+                const response = await fetch("/api/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Registration failed");
+                }
+
+                message.style.color = "#4ade80";
+                message.textContent =
+                    "Registration successful! Opening login page...";
+
+                form.reset();
+
+                setTimeout(function () {
+                    window.location.href = "/login.html";
+                }, 1200);
+
+            } catch (error) {
+                message.style.color = "#f87171";
+                message.textContent = error.message;
+            } finally {
+                button.disabled = false;
+                button.textContent = "Register";
+            }
+        });
+    </script>
+</body>
+</html>
